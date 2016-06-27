@@ -3,11 +3,11 @@ from primerpeso import models, forms
 
 
 class AddCreatorMixin:
-    """Subclass of ``ModelAdmin``s which adds the user to the creator field.
+    """Mixin which adds the user to the creator field.
     """
 
     def get_form(self, request, *args, **kwargs):
-        form = super(AddCreator, self).get_form(request, *args, **kwargs)
+        form = super(AddCreatorMixin, self).get_form(request, *args, **kwargs)
         form.base_fields['creator'].initial = request.user
         return form
 
