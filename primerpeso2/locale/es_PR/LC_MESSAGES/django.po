@@ -231,11 +231,11 @@ msgstr "Búsqueda de Fecha y Hora"
 
 #: primerpeso/models.py:345
 msgid "How would you use the incentive?"
-msgstr "¿Cómo utilizaría el incentivo?"
+msgstr "En estos momentos, ¿para qué utilizarías los incentivos disponibles?"
 
 #: primerpeso/models.py:349
 msgid "Will the CEOs be investing money from their own pockets?"
-msgstr "¿Los CEOs estar invirtiendo su propio dinero?"
+msgstr "¿Vas a invertir capital propio en tu negocio?"
 
 #: primerpeso/models.py:357
 msgid "Both"
@@ -243,31 +243,31 @@ msgstr "Ambos"
 
 #: primerpeso/models.py:359
 msgid "What are the owner's genders?"
-msgstr "¿Cuáles son los géneros de los propietarios?"
+msgstr "Indicar el género de los dueños del negocio."
 
 #: primerpeso/models.py:364
 msgid "What is the business structure?"
-msgstr "¿Cuál es la estructura de negocio?"
+msgstr "¿Bajo qué estructura jurídica operará su negocio?"
 
 #: primerpeso/models.py:368
 msgid "What industry is your business?"
-msgstr "¿Lo que la industria ofrece servicios su negocio?"
+msgstr "Indicar la industria o sector al que está relacionado su negocio. (Código NAICS)"
 
 #: primerpeso/models.py:372
 msgid "Where are the physical locations of your businesses?"
-msgstr "¿Dónde está la ubicación física de su negocio?"
+msgstr "Indicar en donde opera o operará su negocio."
 
 #: primerpeso/models.py:375
 msgid "How many full time employees do you have?"
-msgstr "¿Cuántos empleados a tiempo completo tiene usted?"
+msgstr "¿Cuántos empleados a tiempo completo (full-time) tiene su empresa? "
 
 #: primerpeso/models.py:377
 msgid "How many years have you been in business?"
-msgstr "¿Cuántos años ha estado en el negocio?"
+msgstr "Indicar el número de años que lleva su negocio en operación."
 
 #: primerpeso/models.py:380
 msgid "What was the gross revenue for your last fiscal calendar year?"
-msgstr "¿Cuál fue el ingreso bruto para su último año calendario fiscal?"
+msgstr "Indicar las ventas brutas de su negocio en el último año."
 
 #: primerpeso/models.py:437
 msgid "Opportunity Search"
