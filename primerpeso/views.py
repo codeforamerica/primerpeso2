@@ -1,12 +1,13 @@
 import urllib
-from django.shortcuts import render, redirect
-from formtools.wizard.views import CookieWizardView
-from django.views.generic.detail import DetailView
-from django.utils.translation import ugettext as _
+from django.core.mail import EmailMessage
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
+from django.views.generic.detail import DetailView
 from django.shortcuts import render_to_response
 from django.shortcuts import get_object_or_404
-from django.template import RequestContext
+from django.shortcuts import render, redirect
+from django.template import RequestContext, loader, Context
+from formtools.wizard.views import CookieWizardView
 from . import models, forms
 
 
@@ -59,6 +60,17 @@ class ContactFormView(CookieWizardView):
         contact.save()
         for opp in self.opportunities:
             contact.opportunities.add(opp)
+        tmp = loader.get_template('primerpeso/email.txt')
+        body = tmp.render(Context({'contact': contact}))
+        email = EmailMessage(
+            _('Application Form PrimerPeso'),
+            body,
+            'noreply.primerpeso@cce.pr.gov',
+            ['to1@example.com', 'to2@example.com'],
+            ['bcc@example.com'],
+            reply_to=[contact.email,],
+        )
+        email.send()
         url = reverse('thanks')
         return redirect(url)
 

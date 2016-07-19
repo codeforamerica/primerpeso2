@@ -1,0 +1,37 @@
+Application Form Primerpeso
+Agency: Use Agency Name
+
+Serach Terms:
+	Purpose: open_franchise
+	Investing own money: Yes
+	Purpose: any
+	Age: 2.3
+	Type of Business: for_profit
+	Industry: 11
+	business location: Aguadilla
+	Number of employees: 1_5
+	Years in business: 3
+	Sales volume: 0_99999
+
+Contact Information:
+	Name: {{ contact.full_name }}
+	Phone: {{ contact.phone_number }}
+	Email: {{ contact.email }}
+	Address: {{ contact.address }}
+	Postal Code: {{ contact.postal_code }}
+	Municipality: {{ contact.city }}
+	State: {{ contact.state }}
+
+Other Business Information:
+	Incorporated: {{ contact.incorporated }}
+	Company Legal Name: {{ contact.company }}
+	Municipality: {{ contact.company_municipatlity }}
+	State: {{ contact.company_state }}
+	Postal Code: {{ contact.company_postal_code }}
+
+Requested Program Opportunities:
+	tax incentives and gestoría
+	seminars
+
+
+**Use ReplyAll to respond to contact's email and do not email noreply directly
