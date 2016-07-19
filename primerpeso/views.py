@@ -68,7 +68,7 @@ class ContactFormView(CookieWizardView):
             'noreply.primerpeso@cce.pr.gov',
             ['to1@example.com', 'to2@example.com'],
             ['bcc@example.com'],
-            reply_to=[contact.email,],
+            reply_to=[contact.email, ],
         )
         email.send()
         url = reverse('thanks')
