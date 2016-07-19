@@ -62,5 +62,5 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
     form = forms.RequirementForm
-
+    list_display = ('name', 'email', 'web',)
 admin.site.register(models.Contact)

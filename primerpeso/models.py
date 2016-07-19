@@ -37,7 +37,7 @@ class Agency(WhoAndWhenBase):
         max_length=255,
         verbose_name=_('phone'))
     fax = models.CharField(blank=True, max_length=255, verbose_name=_('fax'))
-    email = models.EmailField(blank=True, verbose_name=_('email'))
+    email = models.EmailField(blank=False, verbose_name=_('email'))
     address = models.TextField(blank=True, verbose_name=_('address'))
     municipality = models.CharField(
         blank=True,
