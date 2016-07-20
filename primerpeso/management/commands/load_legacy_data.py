@@ -82,7 +82,7 @@ class Command(BaseCommand):
                     mission=agency['mission'],
                     phone=agency['phone'],
                     fax=agency['fax'],
-                    email=agency['email'],
+                    email=agency['email'] or 'change@me.now',
                     address=agency['address'],
                     municipality=agency['municipality'],
                     state=agency['state'],

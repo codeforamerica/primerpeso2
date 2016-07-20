@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-18 22:06+0000\n"
+"POT-Creation-Date: 2016-07-20 00:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,7 +251,9 @@ msgstr "¿Bajo qué estructura jurídica operará su negocio?"
 
 #: primerpeso/models.py:368
 msgid "What industry is your business?"
-msgstr "Indicar la industria o sector al que está relacionado su negocio. (Código NAICS)"
+msgstr ""
+"Indicar la industria o sector al que está relacionado su negocio. (Código "
+"NAICS)"
 
 #: primerpeso/models.py:372
 msgid "Where are the physical locations of your businesses?"
@@ -369,23 +371,25 @@ msgid "Add"
 msgstr "Añadir"
 
 #: primerpeso/templates/primerpeso/search_results.html:68
-#, fuzzy
-#| msgid "agency contact email"
 msgid "Send Contact Emails"
-msgstr "Email de Contacto del Organismo"
+msgstr "Enviar correo electrónico de contacto"
 
-#: primerpeso/views.py:14
+#: primerpeso/views.py:15
 msgid "About"
 msgstr "Sobre"
 
-#: primerpeso/views.py:18
+#: primerpeso/views.py:19
 msgid "Home"
 msgstr "Página Principal"
 
-#: primerpeso/views.py:23
+#: primerpeso/views.py:24
 msgid "Sent Email Confirmation"
 msgstr "Email de Contacto del Organismo"
 
-#: primerpeso/views.py:81
+#: primerpeso/views.py:66
+msgid "Application Form PrimerPeso"
+msgstr "Formulario de solicitud de Primerpeso"
+
+#: primerpeso/views.py:93
 msgid "Questionnaire Results"
 msgstr "Resultados del Cuestionario"
