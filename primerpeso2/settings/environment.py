@@ -17,5 +17,7 @@ DATABASES = {
     }
 }
 
+EMAIL_HOST = os.environ['EMAIL_HOST']
+
 STATIC_ROOT = os.environ['STATIC_ROOT']
 MEDIA_ROOT = os.environ['MEDIA_ROOT']
