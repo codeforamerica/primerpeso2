@@ -1,37 +1,37 @@
-Application Form Primerpeso
-Agency: Use Agency Name
+{% load i18n %}
+{% trans 'Application Form Primerpeso' %}
+{% trans 'Agency' %}: {{ agency.name }}
 
-Serach Terms:
-	Purpose: open_franchise
-	Investing own money: Yes
-	Purpose: any
-	Age: 2.3
-	Type of Business: for_profit
-	Industry: 11
-	business location: Aguadilla
-	Number of employees: 1_5
-	Years in business: 3
-	Sales volume: 0_99999
+{% trans 'Serach Terms' %}:
+	{% trans 'Purpose' %}: {{ search.purpose|join:", " }}
+	{% trans 'Investing own money' %}: {{ search.investing_own_money }}
+	{% trans 'Gender' %}: {{ search.gender }}
+	{% trans 'Type of Business' %}: {{ search.entity_type }}
+	{% trans 'Industry' %}: {{ search.industry }}
+	{% trans 'Business locations' %}: {{ search.locations|join:", "}}
+	{% trans 'Number of employees' %}: {{ search.employees  }}
+	{% trans 'Years in business' %}: {{ search.years_in_business }}
+	{% trans 'Annual Revenue' %}: {{ search.annual_revenue  }}
 
-Contact Information:
-	Name: {{ contact.full_name }}
-	Phone: {{ contact.phone_number }}
-	Email: {{ contact.email }}
-	Address: {{ contact.address }}
-	Postal Code: {{ contact.postal_code }}
-	Municipality: {{ contact.city }}
-	State: {{ contact.state }}
+{% trans 'Contact Information' %}:
+	{% trans 'Name' %}: {{ contact.full_name }}
+	{% trans 'Phone' %}: {{ contact.phone_number }}
+	{% trans 'Email' %}: {{ contact.email }}
+	{% trans 'Address' %}: {{ contact.address }}
+	{% trans 'Postal Code' %}: {{ contact.postal_code }}
+	{% trans 'Municipality' %}: {{ contact.city }}
+	{% trans 'State' %}: {{ contact.state }}
 
-Other Business Information:
-	Incorporated: {{ contact.incorporated }}
-	Company Legal Name: {{ contact.company }}
-	Municipality: {{ contact.company_municipatlity }}
-	State: {{ contact.company_state }}
-	Postal Code: {{ contact.company_postal_code }}
+{% trans 'Other Business Information' %}:
+	{% trans 'Incorporated' %}: {{ contact.incorporated }}
+	{% trans 'Company Legal Name' %}: {{ contact.company }}
+	{% trans 'Municipality' %}: {{ contact.company_municipatlity }}
+	{% trans 'State' %}: {{ contact.company_state }}
+	{% trans 'Postal Code' %}: {{ contact.company_postal_code }}
 
-Requested Program Opportunities:
-	tax incentives and gestoría
-	seminars
+{% trans 'Requested Program Opportunities' %}:
+{% for opportunity in opportunities %}
+	{{ opportunity.title }}- {{ opportunity.get_absolute_url }}
+{% endfor %}
 
-
-**Use ReplyAll to respond to contact's email and do not email noreply directly
+{% trans '**Use ReplyAll to respond to contact\'s email and do not email noreply directly' %}

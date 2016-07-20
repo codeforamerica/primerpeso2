@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import Q
@@ -329,6 +330,9 @@ class Opportunity(WhoAndWhenBase):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('opportunity-detail', kwargs={ 'pk': self.pk})
+
     class Meta:
         verbose_name = _('Opportunity')
         verbose_name_plural = _('Opportunities')
@@ -418,11 +422,11 @@ class OpportunitySearch(models.Model):
         opps = opps.filter(
             minimum_years_in_business__lte=self.years_in_business)
         opps = min_max_query(opps, 'annual_revenue', self.annual_revenue)
-        opps = opps.order_by('title')
+        opps = opps
         return opps
 
     def segment_search(self):
-        results = self.search()
+        results = self.search().order_by('title')
         opps_by_type = {
             key: {'name': value, 'opps': []} for (key, value) in BENEFIT_TYPES}
         for result in results:

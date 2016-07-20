@@ -18,3 +18,4 @@ COMPRESS_ROOT = '/tmp/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LANGUAGE_CODE = 'en-us' # 'es-pr'
+SITE_URL = 'localhost'

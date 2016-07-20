@@ -1,5 +1,7 @@
 import urllib
+from django.conf import settings
 from django.core.mail import EmailMessage
+from django.core.urlresolvers import set_script_prefix
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.views.generic.detail import DetailView
@@ -58,19 +60,30 @@ class ContactFormView(CookieWizardView):
         contact = models.Contact(**combined)
         contact.search = self.search
         contact.save()
+        by_agency = {}
         for opp in self.opportunities:
             contact.opportunities.add(opp)
-        tmp = loader.get_template('primerpeso/email.txt')
-        body = tmp.render(Context({'contact': contact}))
-        email = EmailMessage(
-            _('Application Form PrimerPeso'),
-            body,
-            'noreply.primerpeso@cce.pr.gov',
-            ['to1@example.com', 'to2@example.com'],
-            ['bcc@example.com'],
-            reply_to=[contact.email, ],
-        )
-        email.send()
+            agency = opp.agency
+            by_agency.setdefault(agency,[]).append(opp)
+        set_script_prefix(settings.SITE_URL)
+        for agency, opps in by_agency.items():
+            tmp = loader.get_template('primerpeso/email.txt')
+            body = tmp.render(Context({
+                'contact': contact,
+                'search': self.search,
+                'agency': agency,
+                'opportunities': opps,
+            }))
+            email = EmailMessage(
+                _('Application Form PrimerPeso'),
+                body,
+                'noreply.primerpeso@cce.pr.gov',
+                [agency.email],
+                ['bcc@example.com'],
+                reply_to=[contact.email, ],
+            )
+            email.send()
+        set_script_prefix('')
         url = reverse('thanks')
         return redirect(url)
 
