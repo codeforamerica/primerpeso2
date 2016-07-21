@@ -5,5 +5,4 @@ COMPRESS_ENABLE = True
 LANGUAGE_CODE = 'es-pr'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_SSL = True
 SITE_URL = 'https://staging.primerpeso.com'
