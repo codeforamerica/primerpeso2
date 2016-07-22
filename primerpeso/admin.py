@@ -12,7 +12,7 @@ class AddCreatorMixin:
         return form
 
 
-class AddCreator(admin.ModelAdmin, AddCreatorMixin):
+class AddCreator(AddCreatorMixin, admin.ModelAdmin):
     pass
 
 
@@ -61,6 +61,6 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
 
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
-    form = forms.RequirementForm
+    form = forms.AgencyForm
     list_display = ('name', 'email', 'web',)
 admin.site.register(models.Contact)

@@ -98,6 +98,8 @@ class SizeSearchForm(forms.ModelForm):
 class AgencyForm(forms.ModelForm):
 
     class Meta:
+        model = models.Agency
+        exclude = []
         widgets = {
             "creator": forms.HiddenInput(),
         }
@@ -106,6 +108,8 @@ class AgencyForm(forms.ModelForm):
 class RequirementRelationshipForm(forms.ModelForm):
 
     class Meta:
+        model = models.RequirementRelationship
+        exclude = []
         widgets = {
             "creator": forms.HiddenInput(),
         }
@@ -114,6 +118,8 @@ class RequirementRelationshipForm(forms.ModelForm):
 class RequirementForm(forms.ModelForm):
 
     class Meta:
+        model = models.Requirement
+        exclude = []
         widgets = {
             "creator": forms.HiddenInput(),
         }

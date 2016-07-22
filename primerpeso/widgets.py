@@ -2,7 +2,7 @@ from django import forms
 from django.utils.datastructures import MultiValueDict
 
 
-class ArrayFieldSelectMultiple(forms.CheckboxSelectMultiple):
+class ArrayFieldSelectMultiple(forms.SelectMultiple):
     """This is a Form Widget for use with a Postgres ArrayField. It implements
     a multi-select interface that can be given a set of `choices`.
 
@@ -27,5 +27,6 @@ class ArrayFieldSelectMultiple(forms.CheckboxSelectMultiple):
             # Normally, we'd want a list here, which is what we get from the
             # SelectMultiple superclass, but the SimpleArrayField expects to
             # get a delimited string, so we're doing a little extra work.
-            return self.delimiter.join(data.getlist(name))
+            array = self.delimiter.join(data.getlist(name))
+            return array
         return data.get(name, None)
