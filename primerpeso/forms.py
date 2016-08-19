@@ -6,7 +6,7 @@ from primerpeso.widgets import ArrayFieldSelectMultiple
 
 class OpportunityListForm(forms.Form):
     opportunities = forms.ModelMultipleChoiceField(
-                    queryset=models.Opportunity.objects.all())
+        queryset=models.Opportunity.objects.all())
 
 
 class PersonalContactForm(forms.ModelForm):

@@ -328,7 +328,7 @@ class Opportunity(WhoAndWhenBase):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('opportunity-detail', kwargs={ 'pk': self.pk})
+        return reverse('opportunity-detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = _('Opportunity')

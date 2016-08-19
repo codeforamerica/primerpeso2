@@ -64,7 +64,7 @@ class ContactFormView(CookieWizardView):
         for opp in self.opportunities:
             contact.opportunities.add(opp)
             agency = opp.agency
-            by_agency.setdefault(agency,[]).append(opp)
+            by_agency.setdefault(agency, []).append(opp)
         set_script_prefix(settings.SITE_URL)
         for agency, opps in by_agency.items():
             tmp = loader.get_template('primerpeso/email.txt')
@@ -78,9 +78,9 @@ class ContactFormView(CookieWizardView):
                 _('Application Form PrimerPeso'),
                 body,
                 'noreply.primerpeso@cce.pr.gov',
-                [agency.email],
-                ['bcc@example.com'],
-                reply_to=[contact.email, ],
+                [agency.email, contact.email],
+                [],
+                reply_to=[agency.email, contact.email],
             )
             email.send()
         set_script_prefix('')

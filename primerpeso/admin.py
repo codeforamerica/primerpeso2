@@ -59,8 +59,23 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
         return False
 
 
+@admin.register(models.Contact)
+class ContactAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        if request.method not in ('GET', 'HEAD'):
+            return False
+        return super(ContactAdmin,
+                     self).has_change_permission(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
     form = forms.AgencyForm
     list_display = ('name', 'email', 'web',)
-admin.site.register(models.Contact)
