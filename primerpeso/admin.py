@@ -34,17 +34,21 @@ class RequirementRelationshipAdmin(AddCreatorInline):
 
 @admin.register(models.Opportunity)
 class OpportunityAdmin(AddCreator):
+    readonly_fields = ('created_at', 'updated_at',)
     form = forms.OpportunityForm
     inlines = (RequirementRelationshipAdmin, )
 
 
 @admin.register(models.Requirement)
 class RequirementAdmin(AddCreator):
+    readonly_fields = ('created_at', 'updated_at',)
     form = forms.RequirementForm
 
 
 @admin.register(models.OpportunitySearch)
 class OpportunitySearchAdmin(admin.ModelAdmin):
+    readonly_fields = ('created_at',)
+    list_display = ('pk', 'created_at',)
 
     def has_add_permission(self, request, obj=None):
         return False
@@ -61,6 +65,8 @@ class OpportunitySearchAdmin(admin.ModelAdmin):
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
+    readonly_fields = ('created_at',)
+    list_display = ('email', 'created_at',)
 
     def has_add_permission(self, request, obj=None):
         return False
@@ -77,5 +83,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(models.Agency)
 class AgencyAdmin(AddCreator):
+    readonly_fields = ('created_at', 'updated_at',)
     form = forms.AgencyForm
     list_display = ('name', 'email', 'web',)

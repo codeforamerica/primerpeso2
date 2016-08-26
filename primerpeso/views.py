@@ -77,7 +77,7 @@ class ContactFormView(CookieWizardView):
             email = EmailMessage(
                 _('Application Form PrimerPeso'),
                 body,
-                'noreply.primerpeso@cce.pr.gov',
+                'noreplyprimerpeso@cce.pr.gov',
                 [agency.email, contact.email],
                 [],
                 reply_to=[agency.email, contact.email],
