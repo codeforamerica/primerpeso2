@@ -84,7 +84,7 @@ class LocationSearchForm(forms.ModelForm):
         fields = ['locations']
         widgets = {
             "locations": ArrayFieldSelectMultiple(
-                choices=models.LOCATIONS, attrs={'class': 'chosen'}),
+                choices=models.LOCATIONS_SEARCH, attrs={'class': 'chosen'}),
         }
 
 

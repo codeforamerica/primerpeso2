@@ -32,6 +32,7 @@ class SearchFormView(CookieWizardView):
     def done(self, form_list, **kwargs):
         combined = {}
         for form in form_list:
+            form.is_valid()
             combined.update(form.cleaned_data)
         search = models.OpportunitySearch(**combined)
         search.save()
